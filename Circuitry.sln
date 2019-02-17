@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Circuitry", "Circuitry\Circuitry.shproj", "{552FB3A9-6013-47FF-BE49-A1359783343F}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Circuitry\Circuitry.projitems*{552fb3a9-6013-47ff-be49-a1359783343f}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3184D7FB-C454-414F-AA08-37CFCCFCAEDD}
+	EndGlobalSection
+EndGlobal
