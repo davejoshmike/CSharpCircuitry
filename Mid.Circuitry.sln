@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2019
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mid.Circuitry", "Circuitry\Mid.Circuitry.shproj", "{552FB3A9-6013-47FF-BE49-A1359783343F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.CircuitryFlowController", "CurcuitFlowController\Mid.Circuitry.CircuitryFlowController.csproj", "{CF2D36C2-E75F-40C7-8E78-52EF5732295E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.CircuitryRunner", "CircuitRunner\Mid.Circuitry.CircuitryRunner.csproj", "{BDE17D13-00C8-47EE-AEBD-A514B150CF77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.Shared", "Mid.Circuitry.Shared\Mid.Circuitry.Shared.csproj", "{B8D9E0ED-9A49-441C-963C-248F34B550E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.U.Tests", "Mid.Circuitry.Circuitry.U.Tests\Mid.Circuitry.U.Tests.csproj", "{8CA98381-284A-45B4-B522-24C5836CCC81}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Circuitry\Circuitry.projitems*{552fb3a9-6013-47ff-be49-a1359783343f}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF2D36C2-E75F-40C7-8E78-52EF5732295E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF2D36C2-E75F-40C7-8E78-52EF5732295E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF2D36C2-E75F-40C7-8E78-52EF5732295E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF2D36C2-E75F-40C7-8E78-52EF5732295E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE17D13-00C8-47EE-AEBD-A514B150CF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE17D13-00C8-47EE-AEBD-A514B150CF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE17D13-00C8-47EE-AEBD-A514B150CF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE17D13-00C8-47EE-AEBD-A514B150CF77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D9E0ED-9A49-441C-963C-248F34B550E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D9E0ED-9A49-441C-963C-248F34B550E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D9E0ED-9A49-441C-963C-248F34B550E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D9E0ED-9A49-441C-963C-248F34B550E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA98381-284A-45B4-B522-24C5836CCC81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA98381-284A-45B4-B522-24C5836CCC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA98381-284A-45B4-B522-24C5836CCC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA98381-284A-45B4-B522-24C5836CCC81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3184D7FB-C454-414F-AA08-37CFCCFCAEDD}
+	EndGlobalSection
+EndGlobal
