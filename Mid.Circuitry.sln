@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.Shared", "Mid
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.U.Tests", "Mid.Circuitry.Circuitry.U.Tests\Mid.Circuitry.U.Tests.csproj", "{8CA98381-284A-45B4-B522-24C5836CCC81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mid.Circuitry.CircuitDisplay", "CircuitDisplay\Mid.Circuitry.CircuitDisplay.csproj", "{704AE4F8-9B0E-4FB2-A9A5-9A68ADB5A18B}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Circuitry\Circuitry.projitems*{552fb3a9-6013-47ff-be49-a1359783343f}*SharedItemsImports = 13
@@ -38,6 +40,10 @@ Global
 		{8CA98381-284A-45B4-B522-24C5836CCC81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CA98381-284A-45B4-B522-24C5836CCC81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CA98381-284A-45B4-B522-24C5836CCC81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{704AE4F8-9B0E-4FB2-A9A5-9A68ADB5A18B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{704AE4F8-9B0E-4FB2-A9A5-9A68ADB5A18B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{704AE4F8-9B0E-4FB2-A9A5-9A68ADB5A18B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{704AE4F8-9B0E-4FB2-A9A5-9A68ADB5A18B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
