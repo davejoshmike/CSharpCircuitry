@@ -13,7 +13,7 @@ namespace Mid.Circuitry.Shared
         public PolarityEnum Polarity { get; set; }
 
         public int ParentNodeId { get; set; }
-        public int ToPinId { get; set; }
+        public int? ToPinId { get; set; }
         #endregion
 
         #region Constructor
