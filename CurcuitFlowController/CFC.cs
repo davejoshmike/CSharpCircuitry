@@ -14,7 +14,6 @@ namespace Mid.Circuitry.CircuitryFlowController
         {
             Console.WriteLine("Initializing Circuitry Flow Controller...");
 
-            // Do any necessary init actions
             NodeTable = new Dictionary<int, Node>();
 
             PinTable = new Dictionary<int, Pin>();
@@ -28,7 +27,7 @@ namespace Mid.Circuitry.CircuitryFlowController
         public static Dictionary<int, Node> NodeTable { get; set; }
 
         /// <summary>
-        /// Dictionary of Pins to allow for quicker node traversal (key: pinId)
+        /// Dictionary of Pins to allow for quicker node traversal (key: PinId)
         /// </summary>
         public static Dictionary<int, Pin> PinTable { get; set; }
 
@@ -63,7 +62,12 @@ namespace Mid.Circuitry.CircuitryFlowController
         // This assumes that the PinTable works and has every single pin
         public static void StepThroughCircuitWithPins(int fromPinId)
         {
-            // Lookup from Pin
+            if(!PinTable.Any())
+            {
+                PopulatePinTable();
+            }
+
+            // Lookup PinTable
             Pin fromPin = PinTable[fromPinId];
             if (fromPin.ToPinId.HasValue)
             {
@@ -71,15 +75,19 @@ namespace Mid.Circuitry.CircuitryFlowController
 
                 StepThroughCircuitWithPins(toPinId);
             }
-            // else exit condition (no more pins to traverse)            
+            // exit (no more pins to traverse)            
         }
 
         // This assumes that the PinTable works and has every single pin
         public static void StepThroughCircuitWithNodes(int startingNodeId, int? previousPinId = null)
         {
+            if (!PinTable.Any())
+            {
+                PopulatePinTable();
+            }
+
             // Lookup NodeTable
             Node fromNode = NodeTable[startingNodeId];
-
             foreach(Pin fromPin in fromNode.Pins.Where(x => x.PinId != previousPinId))
             {
                 if (fromPin.ToPinId.HasValue)
@@ -93,7 +101,7 @@ namespace Mid.Circuitry.CircuitryFlowController
                     StepThroughCircuitWithNodes(toPinParentNodeId, toPinId);
                 }
             }
-            // else exit (no more nodes to traverse)
+            // exit (no more nodes to traverse)
         }
         #endregion
 
@@ -107,6 +115,17 @@ namespace Mid.Circuitry.CircuitryFlowController
             else
             {
                 NodeTable.Add(node.Id, node);
+            }
+        }
+
+        private static void PopulatePinTable()
+        {
+            foreach (List<Pin> pins in NodeTable.Select(node => node.Value.Pins))
+            {
+                foreach(Pin pin in pins)
+                {
+                    PinTable.Add(pin.PinId, pin);
+                }
             }
         }
         #endregion
