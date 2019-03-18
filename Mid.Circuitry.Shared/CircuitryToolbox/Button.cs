@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mid.Circuitry.Shared.CircuitryToolbox
 {
-    public class Button
+    public class Button : Node
     {
-        public Button()
+        public Button() : base()
         {
             throw new NotImplementedException();
         }

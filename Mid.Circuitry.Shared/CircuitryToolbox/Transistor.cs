@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Mid.Circuitry.Shared.CircuitryToolbox
 {
-    public class Transistor
+    public class Transistor : Node
     {
-        public Transistor()
+        public Transistor() : base()
         {
             throw new NotImplementedException();
         }

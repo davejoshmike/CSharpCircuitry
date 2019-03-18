@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mid.Circuitry.Shared.CircuitryObjects
+namespace Mid.Circuitry.Shared.ComplexObjects
 {
-    public class Buzzer
+    public class Buzzer : Node
     {
-        public Buzzer()
+        public Buzzer() : base()
         {
             throw new NotImplementedException();
         }

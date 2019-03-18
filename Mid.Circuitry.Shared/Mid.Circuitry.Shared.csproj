@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,14 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\Arrow.cs" />
+    <Compile Include="Base\Node.cs" />
+    <Compile Include="Utilities\UniqueIdGenerator.cs" />
     <Compile Include="CircuitryToolbox\Button.cs" />
+    <Compile Include="CircuitryToolbox\GPIO.cs" />
+    <Compile Include="CircuitryToolbox\PowerSource.cs" />
     <Compile Include="CircuitryToolbox\Transistor.cs" />
     <Compile Include="ComplexObjects\Buzzer.cs" />
-    <Compile Include="ComplexObjects\LED.cs" />
+    <Compile Include="ComplexObjects\TwoPinLED.cs" />
     <Compile Include="Constants.cs" />
-    <Compile Include="Pin.cs" />
+    <Compile Include="Base\Pin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WiringPiPInvoke.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
