@@ -3,27 +3,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mid.Circuitry.Shared.Utilities;
 
 namespace Mid.Circuitry.Shared
 {
     public class Arrow
     {
-        Node FromNode { get; set; }
-        Pin FromPin { get; set; }
+        #region Fields
+        public int ArrowId { get; private set; }
 
-        List<Node> ToNodes { get; set; }
-        List<Pin> ToPins { get; set; }
+        public int FromPinId { get; set; }
+        public int ToPinId { get; set; }
 
-        public Arrow(Pin fromPin, Pin toPin)
+        public double Voltage { get; set; }
+        public double Amps { get; set; }
+        #endregion
+
+        #region Constructor
+        public Arrow(int fromPinId, int toPinId, double voltage, double amps)
         {
-            FromPin = fromPin;
-            ToPins = new List<Pin> { toPin };
-        }
+            ArrowId = UniqueIdGenerator.GenerateArrowId();
+            FromPinId = fromPinId;
+            ToPinId = toPinId;
 
-        public Arrow(Pin fromPin, List<Pin> toPins)
-        {
-            FromPin = fromPin;
-            ToPins = toPins;
+            Voltage = voltage;
+            Amps = amps;
         }
+        #endregion
     }
 }

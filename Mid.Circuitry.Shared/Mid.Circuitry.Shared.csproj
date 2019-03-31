@@ -45,10 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base\Arrow.cs" />
+    <Compile Include="Base\Circuit.cs" />
+    <Compile Include="Base\Graph.cs" />
     <Compile Include="Base\Node.cs" />
     <Compile Include="Utilities\UniqueIdGenerator.cs" />
     <Compile Include="CircuitryToolbox\Button.cs" />
-    <Compile Include="CircuitryToolbox\GPIO.cs" />
+    <Compile Include="CircuitryToolbox\Gpio.cs" />
     <Compile Include="CircuitryToolbox\PowerSource.cs" />
     <Compile Include="CircuitryToolbox\Transistor.cs" />
     <Compile Include="ComplexObjects\Buzzer.cs" />

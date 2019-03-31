@@ -5,7 +5,7 @@ using Mid.Circuitry.CircuitryFlowController;
 
 namespace Mid.Circuitry.U.Tests
 {
-    public class TestInitialize
+    public class BaseTestClass
     {
         [TestInitialize]
         public void Initialize()
@@ -17,7 +17,11 @@ namespace Mid.Circuitry.U.Tests
             CFC.Initialize();
 
             Console.WriteLine("Circuitry Unit Tests Initialized.");
+        }
 
+        [TestCleanup]
+        public void TestCleanup()
+        {
             Console.WriteLine("<< Exit.");
         }
     }

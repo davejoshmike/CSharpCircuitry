@@ -8,20 +8,36 @@ namespace Mid.Circuitry.Shared.Utilities
 {
     public static class UniqueIdGenerator
     {
-        private static int nodeId = 0;
+        private static int circuitId = 1;
 
-        private static int pinId = 0;
+        private static int nodeId = 1;
+
+        private static int pinId = 1;
+
+        private static int arrowId = 1;
+
+        public static int GenerateCircuitId()
+        {
+            circuitId++;
+            return circuitId - 1;
+        }
 
         public static int GenerateNodeId()
         {
             nodeId++;
-            return nodeId-1;
+            return nodeId - 1;
         }
 
         public static int GeneratePinId()
         {
             pinId++;
             return pinId - 1;
+        }
+
+        public static int GenerateArrowId()
+        {
+            arrowId++;
+            return arrowId - 1;
         }
     }
 }

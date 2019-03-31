@@ -9,15 +9,39 @@ namespace Mid.Circuitry.Shared.CircuitryToolbox
     public class PowerSource : Node
     {
         #region Fields
-        public Pin Pin { get; set; }
         public PowerTypeEnum PowerType { get; set; }
+        public Pin PowerPin
+        {
+            get => Pins.First(pin => pin.Name.StartsWith(nameof(PowerPin)));
+            set
+            {
+                value.Name = $"{nameof(PowerPin)}{value.PinId}";
+                UpsertPin(value);
+            }
+        }
         #endregion
 
         #region Constructor
         public PowerSource(PowerTypeEnum powerType = PowerTypeEnum.PT3V3) : base()
         {
             PowerType = powerType;
-            Pin Pin = new Pin(polarity: PowerType == PowerTypeEnum.GND ? PolarityEnum.NEG : PolarityEnum.POS);
+            Pins.Add(new Pin(NodeId, name: nameof(PowerPin), polarity: PowerType == PowerTypeEnum.GND ? PolarityEnum.NEG : PolarityEnum.POS));
+        }
+        #endregion
+
+        #region Public Methods
+        public override void ExecuteAction(out bool passPower)
+        {
+            passPower = false;
+            Console.WriteLine($">> ExecuteAction for {Name}");
+
+            if (PowerPin.State == StateEnum.ON)
+            {
+                passPower = true;
+                Console.WriteLine("Passing power to next Node.");
+            }
+
+            Console.WriteLine($"<< ExecuteAction for {Name}");
         }
         #endregion
 

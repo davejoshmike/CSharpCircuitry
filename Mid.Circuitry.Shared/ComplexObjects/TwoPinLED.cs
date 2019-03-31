@@ -16,25 +16,55 @@ namespace Mid.Circuitry.Shared.ComplexObjects
     {
 
         #region Fields
-        public Pin Anode { get; set; }
-        public Pin Cathode { get; set; }        
+        public Pin Anode
+        {
+            get => base.Pins.First(pin => pin.Name.StartsWith(nameof(Anode)));
+            set
+            {
+                value.Name = $"{nameof(Anode)}{value.PinId}";
+                base.UpsertPin(value);
+            }
+        }
+
+        public Pin Cathode
+        {
+            get => base.Pins.First(pin => pin.Name.StartsWith(nameof(Cathode)));
+            set
+            {
+                value.Name = $"{nameof(Cathode)}{value.PinId}";
+                base.UpsertPin(value);
+            }
+        }
         #endregion
 
         #region Constructor
         public TwoPinLED() : base()
         {
-            Anode = new Pin();
-            //PosPin.IO = IOEnum.IN;
+            Anode = new Pin(NodeId);
+            //Anode.IO = IOEnum.IN;
             Anode.Polarity = PolarityEnum.POS;
-            Anode.On();
 
-            Cathode = new Pin();
-            //NegPin.IO = IOEnum.OUT;
+            Cathode = new Pin(NodeId);
+            //Cathode.IO = IOEnum.OUT;
             Cathode.Polarity = PolarityEnum.NEG;
-            Cathode.Off();
         }
-
         #endregion Constructor
 
+        #region Public Methods
+        public override void ExecuteAction(out bool passPower)
+        {
+            passPower = false;
+            Console.WriteLine($">> ExecuteAction for {Name}");
+
+            if(Anode.State == StateEnum.ON)
+            {
+                Cathode.On();
+                passPower = true;
+                Console.WriteLine("Turned Cathode on. Passing Power to next Node.");
+            }
+
+            Console.WriteLine($"<< ExecuteAction for {Name}");
+        }
+        #endregion
     }
 }

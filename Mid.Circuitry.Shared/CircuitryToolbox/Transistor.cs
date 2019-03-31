@@ -12,5 +12,17 @@ namespace Mid.Circuitry.Shared.CircuitryToolbox
         {
             throw new NotImplementedException();
         }
+
+        public override void ExecuteAction(out bool passPower)
+        {
+            passPower = false;
+            Console.WriteLine($">> ExecuteAction for {Name}");
+
+            //TODO Add logic here
+
+            Console.WriteLine($"<< ExecuteAction for {Name}");
+
+            throw new NotImplementedException();
+        }
     }
 }

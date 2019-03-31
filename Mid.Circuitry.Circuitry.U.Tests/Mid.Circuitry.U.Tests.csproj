@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CircuitryFlowController.U.Tests\CircuitryFlowControllerTests.cs" />
-    <Compile Include="TestInitialize.cs" />
+    <Compile Include="BaseTestClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

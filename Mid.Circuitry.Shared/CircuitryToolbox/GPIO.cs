@@ -7,22 +7,45 @@ using Mid.Circuitry.Shared;
 
 namespace Mid.Circuitry.Shared.CircuitryToolbox
 {
-    public class GPIO : Node
+    public class Gpio : Node
     {
         #region Properties
         public IOEnum IO { get; set; }
 
-        public Pin Pin { get; private set; }
-
-        public int PinNumber { get; private set; }
+        public Pin GpioPin
+        {
+            get => Pins.First();
+            set
+            {
+                value.Name = $"{nameof(GpioPin)}{value.PinId}";
+                UpsertPin(value);
+            }
+        }
+        public int GpioPinNumber { get; private set; }
         #endregion
 
         #region Constructor
-        public GPIO(int pinNumber) : base()
+        public Gpio(int gpioPinNumber) : base()
         {
-            PinNumber = pinNumber;
-            Pin Pin = new Pin(StateEnum.ON, PolarityEnum.NEG);
+            GpioPinNumber = gpioPinNumber;
+            Pins.Add(new Pin(NodeId, StateEnum.ON, PolarityEnum.NEG, $"{nameof(GpioPin)}"));
             IO = IOEnum.OUT;
+        }
+        #endregion
+
+        #region Public Methods
+        public override void ExecuteAction(out bool passPower)
+        {
+            passPower = false;
+            Console.WriteLine($">> ExecuteAction for {Name}");
+            
+            if (GpioPin.State == StateEnum.ON)
+            {
+                passPower = true;
+                Console.WriteLine("Passing power to next Node.");
+            }
+
+            Console.WriteLine($"<< ExecuteAction for {Name}");
         }
         #endregion
     }
