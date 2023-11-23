@@ -13,14 +13,14 @@ namespace Mid.Circuitry.Shared.CircuitryToolbox
             throw new NotImplementedException();
         }
 
-        public override void ExecuteAction(out bool passPower)
+        public override void InvokeAction(out bool passPower)
         {
             passPower = false;
-            Console.WriteLine($">> ExecuteAction for {Name}");
+            Console.WriteLine($"> InvokeAction for {Name}");
 
             //TODO Add logic here
 
-            Console.WriteLine($"<< ExecuteAction for {Name}");
+            Console.WriteLine($"< InvokeAction for {Name}");
 
             throw new NotImplementedException();
         }

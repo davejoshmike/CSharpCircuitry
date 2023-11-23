@@ -10,11 +10,11 @@ namespace Mid.Circuitry.Shared
     {
         #region Fields
         public int GraphId { get; set; }
-        public List<Arrow> Arrows { get; set; }
+        public List<ElectricalFlow> Arrows { get; set; }
         #endregion
 
         #region Constructor
-        public Graph(List<Arrow> arrows)
+        public Graph(List<ElectricalFlow> arrows)
         {
             throw new NotImplementedException();
         }

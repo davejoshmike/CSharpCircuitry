@@ -7,10 +7,10 @@ using Mid.Circuitry.Shared.Utilities;
 
 namespace Mid.Circuitry.Shared
 {
-    public class Arrow
+    public class ElectricalFlow
     {
         #region Fields
-        public int ArrowId { get; private set; }
+        public int ElectricalFlowId { get; private set; }
 
         public int FromPinId { get; set; }
         public int ToPinId { get; set; }
@@ -20,9 +20,9 @@ namespace Mid.Circuitry.Shared
         #endregion
 
         #region Constructor
-        public Arrow(int fromPinId, int toPinId, double voltage, double amps)
+        public ElectricalFlow(int fromPinId, int toPinId, double voltage, double amps)
         {
-            ArrowId = UniqueIdGenerator.GenerateArrowId();
+            ElectricalFlowId = UniqueIdGenerator.GenerateElectricalFlowId();
             FromPinId = fromPinId;
             ToPinId = toPinId;
 

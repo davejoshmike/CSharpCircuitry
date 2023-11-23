@@ -14,7 +14,7 @@ namespace Mid.Circuitry.Shared.Utilities
 
         private static int pinId = 1;
 
-        private static int arrowId = 1;
+        private static int electricalFlowId = 1;
 
         public static int GenerateCircuitId()
         {
@@ -34,10 +34,10 @@ namespace Mid.Circuitry.Shared.Utilities
             return pinId - 1;
         }
 
-        public static int GenerateArrowId()
+        public static int GenerateElectricalFlowId()
         {
-            arrowId++;
-            return arrowId - 1;
+            electricalFlowId++;
+            return electricalFlowId - 1;
         }
     }
 }

@@ -51,10 +51,10 @@ namespace Mid.Circuitry.Shared.ComplexObjects
         #endregion Constructor
 
         #region Public Methods
-        public override void ExecuteAction(out bool passPower)
+        public override void InvokeAction(out bool passPower)
         {
             passPower = false;
-            Console.WriteLine($">> ExecuteAction for {Name}");
+            Console.WriteLine($"> InvokeAction for {Name}");
 
             if(Anode.State == StateEnum.ON)
             {
@@ -63,7 +63,7 @@ namespace Mid.Circuitry.Shared.ComplexObjects
                 Console.WriteLine("Turned Cathode on. Passing Power to next Node.");
             }
 
-            Console.WriteLine($"<< ExecuteAction for {Name}");
+            Console.WriteLine($"< InvokeAction for {Name}");
         }
         #endregion
     }

@@ -49,7 +49,7 @@ namespace Mid.Circuitry.Shared
         #endregion
 
         #region Public Methods
-        public abstract void ExecuteAction(out bool passPower);
+        public abstract void InvokeAction(out bool passPower);
 
         /// <summary>
         /// Lookup the fromPinId from the Node's List of Pins 

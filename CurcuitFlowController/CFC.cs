@@ -27,9 +27,9 @@ namespace Mid.Circuitry.CircuitryFlowController
         public static Dictionary<int, Pin> PinTable { get; set; }
 
         /// <summary>
-        /// Dictionary of Arrows to allow for visualization of flow (key: ArrowId)
+        /// Dictionary of electricalFlow to allow for visualization of flow (key: ElectricalFlowId)
         /// </summary>
-        public static Dictionary<int, Arrow> ArrowTable { get; set; }
+        public static Dictionary<int, ElectricalFlow> ElectricalFlowTable { get; set; }
         #endregion
 
         #region Init
@@ -40,6 +40,8 @@ namespace Mid.Circuitry.CircuitryFlowController
             NodeTable = new Dictionary<int, Node>();
 
             PinTable = new Dictionary<int, Pin>();
+
+            //TODO Route ElectricalFlow and allow for electrical flow to be determined as broken or a complete circuit
         }
         #endregion
 
@@ -76,16 +78,18 @@ namespace Mid.Circuitry.CircuitryFlowController
             Node fromNode = NodeTable[startingNodeId];
         
             // Call the node logic
-            fromNode.ExecuteAction(out bool passPower);
-            
-            foreach (Pin fromPin in fromNode.Pins.Where(x => x.PinId != previousPinId))
+            fromNode.InvokeAction(out bool passPower);
+
+            var fromPins = fromNode.Pins.Where(x => x.PinId != previousPinId);
+
+            foreach (Pin fromPin in fromPins)
             {
                 if (fromPin.ToPinId.HasValue)
                 {
                     int toPinId = fromPin.ToPinId.Value;
 
-                    // TODO pass voltage through Nodes / through the ExecuteActions???
-                    // ArrowTable.Add(new Arrow(fromPin.PinId, toPinId, CalculateVoltage, CalculateAmps));
+                    // TODO pass voltage through Nodes / through the InvokeActions???
+                    // ElectricalFlowTable.Add(new ElectricalFlow(fromPin.PinId, toPinId, CalculateVoltage, CalculateAmps));
 
                     Pin toPin = PinTable[toPinId];
 

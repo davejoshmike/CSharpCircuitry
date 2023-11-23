@@ -30,10 +30,10 @@ namespace Mid.Circuitry.Shared.CircuitryToolbox
         #endregion
 
         #region Public Methods
-        public override void ExecuteAction(out bool passPower)
+        public override void InvokeAction(out bool passPower)
         {
             passPower = false;
-            Console.WriteLine($">> ExecuteAction for {Name}");
+            Console.WriteLine($"> InvokeAction for {Name}");
 
             if (PowerPin.State == StateEnum.ON)
             {
@@ -41,7 +41,7 @@ namespace Mid.Circuitry.Shared.CircuitryToolbox
                 Console.WriteLine("Passing power to next Node.");
             }
 
-            Console.WriteLine($"<< ExecuteAction for {Name}");
+            Console.WriteLine($"< InvokeAction for {Name}");
         }
         #endregion
 
