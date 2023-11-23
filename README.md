@@ -23,15 +23,20 @@ To get started with CSharpCircuitry, follow these steps:
 1. **Clone the Repository**: 
    ```bash
    git clone https://github.com/davejoshmike/CSharpCircuitry.git
-1. **Explore Examples**: Check out the examples directory to see how to use the library in your own projects.
+1. **Explore Examples**: Check out the CircuitryRunner directory to explore how to use the project.
 
-1. **Build and Run**: Build the solution and run the example projects to see CSharpCircuitry in action.
+1. **Build and Run**: Build the solution and run the CircuitryRunner project to see CSharpCircuitry in action.
 
 ## Documentation
 For detailed information on how to use CSharpCircuitry, refer to the documentation.
 
 ## Contributing
 If you're interested in contributing to CSharpCircuitry, please read our contribution guidelines to get started. We welcome bug reports, feature requests, and pull requests.
+
+## Current TODOs
+* **Console mode**: basic command line interface that allows you to create a rudimentary curcuit
+* **UI mode**: WPF/XAML frontend with the ability to modify the nodes of a circut and view the properties of the nodes
+* **Additional components**: Currently only basic components like buttons, buzzers and leds are supported. Would love to see this expanded to support additional electrical components.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
